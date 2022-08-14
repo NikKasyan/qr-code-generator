@@ -26,7 +26,7 @@ const QrCodePlainInput: FC<Props> = ({ qrCodeText, setQrCodeText }) => {
     if (query[QR_CODE_TEXT]) {
       changeQrCodeText(query[QR_CODE_TEXT]);
     }
-  }, [query, changeQrCodeText]);
+  }, []);
 
   const handleChange = useCallback(
     (event: any) => {
