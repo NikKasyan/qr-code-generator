@@ -36,7 +36,7 @@ const IMAGES = {
 };
 
 const QrCodeImage: FC<Props> = (props) => {
-  const { size, qrCodeOptions } = props;
+  const { size, qrCodeOptions, text } = props;
   const [imageType, setImageType] = useState(ImageType.PNG);
   const [downloadContent, setDownloadContent] = useState("");
   const Image = IMAGES[imageType];
@@ -44,9 +44,6 @@ const QrCodeImage: FC<Props> = (props) => {
   const open = useCallback(() => setOpen(true), [setOpen]);
   const close = useCallback(() => setOpen(false), [setOpen]);
 
-  const openFullScreen = () => {
-    open();
-  };
   return (
     <div className="image" style={{ width: size?.width, height: size?.height }}>
       <Modal open={isOpen} onClose={close}>
@@ -66,7 +63,13 @@ const QrCodeImage: FC<Props> = (props) => {
           </div>
         </>
       </Modal>
-      <div className="qr-code-image" onClick={openFullScreen}>
+      <div
+        className="qr-code-image"
+        onClick={() => {
+          if (text?.length !== 0) open();
+        }}
+        style={text?.length === 0 ? { cursor: "default" } : {}}
+      >
         <Image {...props} updateDownloadContent={setDownloadContent} />
       </div>
       <DownloadImage
