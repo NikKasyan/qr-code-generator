@@ -1,0 +1,14 @@
+.image {
+  display: flex;
+  flex-direction: column;
+}
+
+.qr-code-image {
+  cursor: pointer;
+}
+.modal-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}

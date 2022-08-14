@@ -1,0 +1,9 @@
+.wifi-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 50%;
+}
+.wifi-input > div {
+  width: 100%;
+}

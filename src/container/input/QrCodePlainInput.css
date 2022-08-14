@@ -1,0 +1,8 @@
+.plain-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.plain-text > div {
+  width: 100%;
+}

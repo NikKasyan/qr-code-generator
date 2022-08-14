@@ -1,0 +1,9 @@
+.download-image {
+  display: flex;
+}
+.download-image .button {
+  width: 50%;
+}
+.download-image .select {
+  width: 50%;
+}
