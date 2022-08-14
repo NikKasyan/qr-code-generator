@@ -16,7 +16,7 @@ const DownloadImage: FC<Props> = ({
 }) => {
   const downloadImage = useCallback(() => {
     downloadImg(downloadContent, imageType);
-  }, [downloadContent]);
+  }, [downloadContent, imageType]);
 
   return (
     <div className="download-image">

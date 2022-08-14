@@ -1,8 +1,7 @@
 import { FC, useEffect, useRef } from "react";
 import { QrCode } from "../../utils/QrCode";
-import { ImageProps } from "./QrCodeImage";
 import "./QrCodeCanvasImage.css";
-import download from "../../utils/download";
+import { ImageProps } from "./QrCodeImage";
 const QrCodeCanvasImage: FC<ImageProps> = ({
   text,
   size,
@@ -26,7 +25,7 @@ const QrCodeCanvasImage: FC<ImageProps> = ({
     if (canvasRef?.current !== null) {
       updateDownloadContent(getContent(canvasRef.current));
     }
-  }, [canvasRef, text]);
+  }, [canvasRef, text, updateDownloadContent]);
 
   return (
     <canvas

@@ -27,7 +27,7 @@ const QrCodeSvgImage: FC<ImageProps> = ({
   const src = `data:image/svg+xml;base64,${image}`;
   useEffect(() => {
     updateDownloadContent(src);
-  }, [image]);
+  }, [src, updateDownloadContent]);
   return (
     <img
       alt={text}

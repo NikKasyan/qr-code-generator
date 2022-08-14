@@ -1,6 +1,5 @@
 import { TextField } from "@mui/material";
 import { FC, useCallback, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import useDebouncedNavigate from "../../utils/useDebouncedNavigate";
 import useQuery from "../../utils/useQuery";
 import useType from "../../utils/useType";
@@ -21,7 +20,7 @@ const QrCodePlainInput: FC<Props> = ({ qrCodeText, setQrCodeText }) => {
       setQrCodeText(value);
       navigateTo(`/${type}?${QR_CODE_TEXT}=${value}`);
     },
-    [setQrCodeText]
+    [setQrCodeText, navigateTo, type]
   );
   useEffect(() => {
     if (query[QR_CODE_TEXT]) {

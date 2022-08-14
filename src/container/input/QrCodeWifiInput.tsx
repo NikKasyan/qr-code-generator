@@ -41,7 +41,7 @@ const QrCodeWifiInput: FC<Props> = ({ setQrCodeText }) => {
       setWifiName(value);
       navigateTo(`/${type}?${WIFI_NAME}=${value}&${PASSWORD}=${password}`);
     },
-    [setWifiName, password]
+    [setWifiName, password, navigateTo, type]
   );
 
   const handlePasswordChange = useCallback(
@@ -50,7 +50,7 @@ const QrCodeWifiInput: FC<Props> = ({ setQrCodeText }) => {
       setPassword(value);
       navigateTo(`/${type}?${WIFI_NAME}=${wifiName}&${PASSWORD}=${value}`);
     },
-    [setPassword, wifiName]
+    [setPassword, wifiName, navigateTo, type]
   );
 
   useEffect(() => {

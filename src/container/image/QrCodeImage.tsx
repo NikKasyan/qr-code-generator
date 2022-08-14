@@ -1,4 +1,4 @@
-import { Button, Modal } from "@material-ui/core";
+import { Modal } from "@material-ui/core";
 import { FC, useCallback, useState } from "react";
 import DownloadImage from "./DownloadImage";
 import ImageType from "./ImageType";

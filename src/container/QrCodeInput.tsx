@@ -1,4 +1,3 @@
-import { ThemeContext } from "@emotion/react";
 import { createContext, FC, useMemo, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { QrCodeType } from "../globals";
