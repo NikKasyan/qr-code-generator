@@ -50,13 +50,21 @@ const QrCodeImage: FC<Props> = (props) => {
   return (
     <div className="image" style={{ width: size?.width, height: size?.height }}>
       <Modal open={isOpen} onClose={close}>
-        <div className="modal-body" onClick={close}>
-          <Image
-            {...props}
-            qrCodeOptions={{ margin: 0, width: qrCodeOptions?.width ?? 700 }}
-            updateDownloadContent={setDownloadContent}
-          />
-        </div>
+        <>
+          <div className="modal-body">
+            <Image
+              {...props}
+              qrCodeOptions={{
+                margin: 0,
+                width: (qrCodeOptions?.width ?? 500) + 200,
+              }}
+              updateDownloadContent={setDownloadContent}
+            />
+          </div>
+          <div className="modal-close" onClick={close}>
+            &times;
+          </div>
+        </>
       </Modal>
       <div className="qr-code-image" onClick={openFullScreen}>
         <Image {...props} updateDownloadContent={setDownloadContent} />

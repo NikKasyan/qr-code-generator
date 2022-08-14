@@ -12,3 +12,31 @@
   align-items: center;
   height: 100vh;
 }
+
+.modal-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
+  width: 3vh;
+  height: 3vh;
+  font-size: 3vh;
+  text-align: center;
+  color: darkgrey;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
+  width: 3vh;
+  height: 3vh;
+  font-size: 3vh;
+  text-align: center;
+  color: rgba(169, 169, 169, 0.5);
+  font-weight: bold;
+  cursor: pointer;
+}
