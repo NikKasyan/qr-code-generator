@@ -36,7 +36,7 @@ const IMAGES = {
 };
 
 const QrCodeImage: FC<Props> = (props) => {
-  const { size } = props;
+  const { size, qrCodeOptions } = props;
   const [imageType, setImageType] = useState(ImageType.PNG);
   const [downloadContent, setDownloadContent] = useState("");
   const Image = IMAGES[imageType];
@@ -53,7 +53,7 @@ const QrCodeImage: FC<Props> = (props) => {
         <div className="modal-body" onClick={close}>
           <Image
             {...props}
-            qrCodeOptions={{ margin: 0, width: 700 }}
+            qrCodeOptions={{ margin: 0, width: qrCodeOptions?.width ?? 700 }}
             updateDownloadContent={setDownloadContent}
           />
         </div>
