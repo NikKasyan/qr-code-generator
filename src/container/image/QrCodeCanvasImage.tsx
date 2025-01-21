@@ -1,5 +1,5 @@
 import { FC, useEffect, useRef } from "react";
-import { QrCode } from "../../utils/QrCode";
+import * as QrCode from "qrcode"
 import "./QrCodeCanvasImage.css";
 import { ImageProps } from "./QrCodeImage";
 const QrCodeCanvasImage: FC<ImageProps> = ({

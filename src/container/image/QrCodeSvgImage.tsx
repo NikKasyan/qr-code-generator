@@ -1,5 +1,5 @@
 import { FC, useEffect, useState } from "react";
-import { QrCode } from "../../utils/QrCode";
+import * as QrCode from "qrcode"
 import { ImageProps } from "./QrCodeImage";
 import { Buffer } from "buffer";
 const encodeToBase64 = (string: string) =>

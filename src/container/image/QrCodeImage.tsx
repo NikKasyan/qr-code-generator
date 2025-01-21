@@ -5,13 +5,12 @@ import ImageType from "./ImageType";
 import QrCodeCanvasImage from "./QrCodeCanvasImage";
 import "./QrCodeImage.css";
 import QrCodeSvgImage from "./QrCodeSvgImage";
+import { ErrorCorrectionLevel, QrOptions } from "../../utils/QrOptions";
 
 interface Size {
   width?: number;
   height?: number;
 }
-
-type QrOptions = typeof defaultOptions;
 
 interface _ImageProps {
   updateDownloadContent: (content: string) => void;
@@ -28,11 +27,21 @@ export type ImageProps = _ImageProps & Props;
 const defaultOptions = {
   margin: 0,
   width: 500,
+  errorCorrectionLevel: ErrorCorrectionLevel.L,
 };
 
 const IMAGES = {
   [ImageType.PNG]: QrCodeCanvasImage,
   [ImageType.SVG]: QrCodeSvgImage,
+};
+
+const fillOptionsWithDefaults = (qrCodeOptions?: QrOptions): QrOptions => {
+  return {
+    margin: qrCodeOptions?.margin ?? 0,
+    width: (qrCodeOptions?.width ?? 500) + 200,
+    errorCorrectionLevel:
+      qrCodeOptions?.errorCorrectionLevel ?? ErrorCorrectionLevel.L,
+  };
 };
 
 const QrCodeImage: FC<Props> = (props) => {
@@ -51,10 +60,7 @@ const QrCodeImage: FC<Props> = (props) => {
           <div className="modal-body">
             <Image
               {...props}
-              qrCodeOptions={{
-                margin: 0,
-                width: (qrCodeOptions?.width ?? 500) + 200,
-              }}
+              qrCodeOptions={fillOptionsWithDefaults(qrCodeOptions)}
               updateDownloadContent={setDownloadContent}
             />
           </div>
